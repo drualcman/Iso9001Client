@@ -21,6 +21,9 @@ internal sealed class Iso9001QueuePublisher(IOptions<Iso9001ClientOptions> optio
     public Task PublishNonConformity(NonConformityQueueMessage message)
         => PublishToQueue(options.Value.NonConformityQueue, message);
 
+    public Task PublishUserDataRequest(UserDataQueueMessage message)
+        => PublishToQueue(options.Value.UserDataQueue, message);
+
     private async Task PublishToQueue<T>(string queueName, T message)
     {
         QueueClient client = new QueueClient(options.Value.ConnectionString, queueName);

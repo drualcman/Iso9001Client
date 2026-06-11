@@ -13,6 +13,7 @@ public static class Iso9001ClientExtensions
         services.Configure(configure);
         services.AddSingleton<Iso9001QueuePublisher>();
         services.AddScoped<IIso9001, Iso9001Service>();
+        services.AddScoped<IIso9001UserData, Iso9001UserDataService>();
         return services;
     }
 }

@@ -4,7 +4,7 @@
 		<TargetFramework>net9.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<Version>1.0.0</Version>
+		<Version>1.1.0</Version>
 		<Authors>Sergi Ortiz Gomez</Authors>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -20,7 +20,7 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/drualcman/Iso9001Client</RepositoryUrl>
 		<PackageTags>ISO9001;Quality;AuditLog;Incident;Feedback;NonConformity;Azure;StorageQueues;DependencyInjection</PackageTags>
-		<PackageReleaseNotes>First release</PackageReleaseNotes>
+		<PackageReleaseNotes>Add IIso9001UserData.RequestUserData to ask the ISO9001 system, via queue, to email a subject all data it holds about them (audit logs, incidents, feedback) matched by a list of identifiers.</PackageReleaseNotes>
 		<RepositoryType>Git</RepositoryType>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	</PropertyGroup>
