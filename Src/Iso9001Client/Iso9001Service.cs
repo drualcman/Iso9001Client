@@ -122,6 +122,7 @@ internal class Iso9001Service(
             await publisher.PublishFeedback(new CustomerFeedbackQueueMessage(
                 EntityId: entityId ?? string.Empty,
                 CompanyId: CompanyId,
+                EmailCompanyId: options.Value.EmailCompanyId,
                 CustomerId: customerId ?? string.Empty,
                 CustomerName: customerName ?? string.Empty,
                 CustomerEmail: customerEmail ?? string.Empty,

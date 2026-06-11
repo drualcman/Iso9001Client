@@ -14,10 +14,10 @@ internal sealed class Iso9001UserDataService(
             .ToList();
         if (ids.Count == 0)
             throw new ArgumentException("At least one identifier is required.", nameof(identifiers));
-        Iso9001ClientOptions opts = options.Value;
         return publisher.PublishUserDataRequest(new UserDataQueueMessage(
-            CompanyId: opts.CompanyId,
-            CompanyName: string.IsNullOrWhiteSpace(opts.CompanyName) ? opts.CompanyId : opts.CompanyName,
+            CompanyId: options.Value.CompanyId,
+            EmailCompanyId: options.Value.EmailCompanyId,
+            CompanyName: string.IsNullOrWhiteSpace(options.Value.CompanyName) ? options.Value.CompanyId : options.Value.CompanyName,
             Identifiers: ids,
             ReceiverName: receiverName ?? string.Empty,
             ReceiverEmail: receiverEmail,
