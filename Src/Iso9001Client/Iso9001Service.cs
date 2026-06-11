@@ -114,7 +114,8 @@ internal class Iso9001Service(
     }
 
     public async Task RegisterFeedback(string entityId, string customerId, string customerName,
-        string customerEmail, string customerAntiPhishing, int rating, string comments)
+        string customerEmail, string customerAntiPhishing, int rating, string comments,
+        string language)
     {
         try
         {
@@ -127,7 +128,8 @@ internal class Iso9001Service(
                 CustomerAntiPhishing: customerAntiPhishing ?? string.Empty,
                 Rating: rating,
                 Comments: comments ?? string.Empty,
-                ReportedAt: DateTime.UtcNow));
+                ReportedAt: DateTime.UtcNow,
+                Language: string.IsNullOrWhiteSpace(language) ? "en" : language));
         }
         catch (Exception ex)
         {
